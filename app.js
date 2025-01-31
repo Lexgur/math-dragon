@@ -48,6 +48,7 @@ form.addEventListener('submit', function (event) {
   var userAnswer = parseInt(answer.value);
   if (userAnswer === correctAnswer) {
     console.log('Good job!');
+    playSound();
     playMagicAttack();
     dragonHp -= 10;
     if (dragonHp <= 0) {
@@ -98,17 +99,19 @@ function playMagicAttack() {
   requestAnimationFrame(animateMagicAttack);
 }
 
-document.getElementById("start-game").addEventListener("click", playSound);
+let hasPlayedSound = false;
 
 function playSound() {
-    var myAudio = new Audio("./snd/ice-dragon.mp3");
-    myAudio.loop = true;
-    myAudio.volume = 0.2;
-    myAudio.play().catch(function(error) {
-        console.error('Audio playback failed:', error);
-    });
+    if (!hasPlayedSound) { // Check if the sound has already been played
+        var myAudio = new Audio("./snd/ice-dragon.mp3");
+        myAudio.loop = true;
+        myAudio.volume = 0.2;
+        myAudio.play().catch(function(error) {
+            console.error('Audio playback failed:', error);
+        });
+        hasPlayedSound = true; // Set the flag to true once the sound has played
+    }
 }
-
 
 /***/ }),
 

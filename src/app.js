@@ -8,16 +8,18 @@ const magicAttackContainer = document.getElementById('magic-attack-container');
 const magicAttack = document.getElementById('magic-attack');
 const magicSound = document.getElementById('magic-sound');
 const dragonHpElement = document.getElementById('dragon-hp');
-
-document.getElementById("start-game").addEventListener("click", playSound);
+let hasPlayedSound = false;
 
 function playSound() {
-    var myAudio = new Audio("./snd/ice-dragon.mp3");
-    myAudio.loop = true;
-    myAudio.volume = 0.2;
-    myAudio.play().catch(function(error) {
-        console.error('Audio playback failed:', error);
-    });
+    if (!hasPlayedSound) { // Check if the sound has already been played
+        var myAudio = new Audio("./snd/ice-dragon.mp3");
+        myAudio.loop = true;
+        myAudio.volume = 0.2;
+        myAudio.play().catch(function(error) {
+            console.error('Audio playback failed:', error);
+        });
+        hasPlayedSound = true; // Set the flag to true once the sound has played
+    }
 }
 
 function rand(min, max) {
@@ -56,6 +58,7 @@ form.addEventListener('submit', function (event) {
 
     if (userAnswer === correctAnswer) {
         console.log('Good job!');
+        playSound();
         playMagicAttack();
         dragonHp -= 10;
         if (dragonHp <= 0) {
