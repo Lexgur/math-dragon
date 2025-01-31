@@ -17,7 +17,11 @@ var magicAttackContainer = document.getElementById('magic-attack-container');
 var magicAttack = document.getElementById('magic-attack');
 var magicSound = document.getElementById('magic-sound');
 var dragonHpElement = document.getElementById('dragon-hp');
+var timer = document.querySelector('[data-timer]');
+var playerHpElement = document.getElementById('player-hp');
 var hasPlayedSound = false;
+var timerActive = false;
+var timerInterval;
 function playSound() {
   if (!hasPlayedSound) {
     var myAudio = new Audio("./snd/ice-dragon.mp3");
@@ -29,16 +33,26 @@ function playSound() {
     hasPlayedSound = true;
   }
 }
+function startTimer() {
+  var secondsElapsed = 0;
+  timerInterval = setInterval(function () {
+    secondsElapsed++;
+    var minutes = Math.floor(secondsElapsed / 60);
+    var seconds = secondsElapsed % 60;
+    timer.innerText = "".concat(minutes, ":").concat(seconds.toString().padStart(2, '0'));
+  }, 1000);
+}
 function rand(min, max) {
   var minCeiled = Math.ceil(min);
   var maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
-//start the rand numbs
+//Zaidimo pagrindine logika
 var randNumber = rand(1, 10);
 var randNumber2 = rand(1, 10);
 var randAction = '';
 var dragonHp = 100;
+var playerHp = 50;
 X.innerText = randNumber;
 Y.innerText = randNumber2;
 if (Math.random() >= 0.5 || randNumber < randNumber2) {
@@ -59,18 +73,34 @@ form.addEventListener('submit', function (event) {
   event.preventDefault();
   var userAnswer = parseInt(answer.value);
   if (userAnswer === correctAnswer) {
-    console.log('Good job!');
+    if (!timerActive) {
+      timerActive = true;
+      startTimer();
+    }
     playSound();
     playMagicAttack();
     dragonHp -= 10;
     if (dragonHp <= 0) {
       dragonHpElement.style.color = 'red';
       dragonHp = 0;
-      alert('ŠAUNUOLĖ, DRAKONAS NUGALĖTAS!');
+      clearInterval(timerInterval);
+      alert('ŠAUNUOLĖ(-IS,), DRAKONAS NUGALĖTAS!');
     }
     dragonHpElement.innerText = dragonHp;
-  } else {
-    console.log('Try again!');
+  } else if (userAnswer !== correctAnswer) {
+    if (!timerActive) {
+      timerActive = true;
+      startTimer();
+    }
+    playerHp -= 10;
+    playSound();
+    if (playerHp <= 0) {
+      playerHpElement.style.color = 'red';
+      playerHp = 0;
+      clearInterval(timerInterval);
+      alert('NEPAVYKO, NAGI NEPASIDUOK!');
+    }
+    playerHpElement.innerText = playerHp;
   }
   randNumber = rand(1, 10);
   randNumber2 = rand(1, 10);

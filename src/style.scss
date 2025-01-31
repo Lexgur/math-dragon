@@ -59,6 +59,11 @@ body {
     gap: 15px;
     color: $red;
     font-size: 40px;
+    .timer {
+      color: $white;
+      position: absolute;
+      margin-top: -190px;
+    }
   }
   .question {
     color: $white;
@@ -93,16 +98,28 @@ body {
       
     }
   }
-
+    
+  }
   .player{
     position: absolute;
-    margin-top: 1400px;
+    margin-top: 1300px;
     margin-left: -520px;
     img{
+      position: absolute;
       height: 115px;
+      margin-top: -100px;
       transform: scaleX(-1);
     }
+    .player-player{
+      gap: 15px;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      font-size: 35px;
+      margin-top: -150px;
+    }
   }
+
 
   .dragon{
     position: absolute;
@@ -120,6 +137,5 @@ body {
     transform: scaleX(-1);
     position: absolute;
   }
-  
-}
+
 

@@ -50,6 +50,11 @@ body {
   color: #ED217C;
   font-size: 40px;
 }
+.dragon-app .title .timer {
+  color: #FEFDFF;
+  position: absolute;
+  margin-top: -190px;
+}
 .dragon-app .question {
   color: #FEFDFF;
   font-size: 80px;
@@ -80,27 +85,40 @@ body {
 .dragon-app .btn-sbmt .heart {
   scale: 1;
 }
-.dragon-app .player {
+
+.player {
   position: absolute;
-  margin-top: 1400px;
+  margin-top: 1300px;
   margin-left: -520px;
 }
-.dragon-app .player img {
+.player img {
+  position: absolute;
   height: 115px;
+  margin-top: -100px;
   transform: scaleX(-1);
 }
-.dragon-app .dragon {
+.player .player-player {
+  gap: 15px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  font-size: 35px;
+  margin-top: -150px;
+}
+
+.dragon {
   position: absolute;
   margin-top: 700px;
   margin-left: 700px;
 }
-.dragon-app .dragon .dragon-hp {
+.dragon .dragon-hp {
   margin-bottom: -50px;
 }
-.dragon-app .dragon img {
+.dragon img {
   height: 700px;
 }
-.dragon-app .magic-attack {
+
+.magic-attack {
   transform: rotate(-15deg);
   transform: scaleX(-1);
   position: absolute;
