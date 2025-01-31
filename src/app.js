@@ -19,7 +19,7 @@ function playSound() {
             this.play();
         }, false);
     }
-    myAudio.volume = 0.2;
+    myAudio.volume = 0.15;
     myAudio.play();
 }
 
