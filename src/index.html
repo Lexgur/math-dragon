@@ -15,38 +15,44 @@
 </head>
 
 <body>
-    <div class="dragon-app">
-        <div class="title">
-            <h1>MATH DRAGON v1</h1>
-            <h2 class="timer" data-timer>0:00</h2>
-        </div>
-        <div data-question class="question">
-            <div data-x></div>
-            <div data-action>+</div>
-            <div data-y></div>
-            =
-            <form>
-                <input type="number" data-answer class="answer">
-                <button type="submit" data-submit class="btn-sbmt"><img src="pics/btn-sbmt.svg" class="heart"></button>
-            </form>
-            <div class="player">
-                <div class="player-hp">
-                    <p class="player-player">Player: <span id="player-hp" class="player-hp">50</span></p>
+    <section class="screen">
+        <div class="wrapper">
+            <div class="dragon-app">
+                <div class="title">
+                    <h1>MATH DRAGON v1</h1>
+                    <h2 class="timer" data-timer>0:00</h2>
                 </div>
-                <img src="pics/elfP.png">
-            </div>
+                <div data-question class="question">
+                    <div data-x></div>
+                    <div data-action>+</div>
+                    <div data-y></div>
+                    =
+                    <form>
+                        <input type="number" data-answer class="answer">
+                        <button type="submit" data-submit class="btn-sbmt"><img src="pics/btn-sbmt.svg"
+                                class="heart"></button>
+                    </form>
+                    <div class="player">
+                        <div class="player-hp">
+                            <p class="player-player">Player: <span id="player-hp" class="player-hp">50</span></p>
+                        </div>
+                        <img src="./pics/elfP.png" class="elfe" alt="elfe">
+                    </div>
 
-            <div class="dragon">
-                <div class="dragon-hp">
-                    <p>Drakonas: <span id="dragon-hp" class="dragon-hp">100</span></p>
-                </div><img src="pics/pixelDragon.png">
-            </div>
-            <!-- Magic attack container yra pasleptas -->
-            <div id="magic-attack-container" style="display: none;">
-                <img id="magic-attack" src="pics/mm.svg" alt="Magic Attack" class="magic-attack">
+                    <div class="dragon">
+                        <div class="dragon-hp">
+                            <p>Drakonas: <span id="dragon-hp" class="dragon-hp">100</span></p>
+                        </div><img src="pics/pixelDragon.png">
+                    </div>
+                    <!-- Magic attack container yra pasleptas -->
+                    <div id="magic-attack-container" style="display: none;">
+                        <img id="magic-attack" src="pics/mm.svg" alt="Magic Attack" class="magic-attack">
+                    </div>
+                </div>
             </div>
         </div>
-        <audio id="magic-sound" src="snd/magic-attack.mp3" preload="auto"></audio>
+    </section>
+    <audio id="magic-sound" src="snd/magic-attack.mp3" preload="auto"></audio>
 </body>
 
 </html>
