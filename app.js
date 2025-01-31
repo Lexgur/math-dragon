@@ -98,22 +98,17 @@ function playMagicAttack() {
   requestAnimationFrame(animateMagicAttack);
 }
 
-window.addEventListener("load", playSound);
+document.getElementById("start-game").addEventListener("click", playSound);
 
 function playSound() {
-  var myAudio = document.getElementById("background-sound");
-  myAudio.src = "./snd/ice-dragon.mp3"; 
-  if (typeof myAudio.loop === 'boolean') {
-    myAudio.loop = true; 
-  } else {
-    myAudio.addEventListener('ended', function () {
-      this.currentTime = 0;
-      this.play();
-    }, false);
-  }
-  myAudio.volume = 0.2; 
-  myAudio.play(); 
+    var myAudio = new Audio("./snd/ice-dragon.mp3");
+    myAudio.loop = true;
+    myAudio.volume = 0.2;
+    myAudio.play().catch(function(error) {
+        console.error('Audio playback failed:', error);
+    });
 }
+
 
 /***/ }),
 
