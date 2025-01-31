@@ -9,18 +9,22 @@ const magicAttack = document.getElementById('magic-attack');
 const magicSound = document.getElementById('magic-sound');
 const dragonHpElement = document.getElementById('dragon-hp');
 
-function playSound() {
-    const myAudio = new Audio("/snd/ice-dragon.mp3");
-    if (typeof myAudio.loop === 'boolean') {
-        myAudio.loop = true;
-    } else {
-        myAudio.addEventListener('ended', function () {
-            this.currentTime = 0;
-            this.play();
-        }, false);
+window.onload = function () {
+    playSound();
+
+    function playSound() {
+        const myAudio = new Audio("snd/ice-dragon.mp3");
+        if (typeof myAudio.loop === 'boolean') {
+            myAudio.loop = true;
+        } else {
+            myAudio.addEventListener('ended', function () {
+                this.currentTime = 0;
+                this.play();
+            }, false);
+        }
+        myAudio.volume = 0.15;
+        myAudio.play();
     }
-    myAudio.volume = 0.15;
-    myAudio.play();
 }
 
 function rand(min, max) {

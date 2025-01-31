@@ -4,7 +4,7 @@
 
 body {
   background-image: url("pics/mathB.jpg");
-  max-width: 1400px;
+  width: 1400px;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;

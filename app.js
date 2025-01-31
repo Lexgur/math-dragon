@@ -97,11 +97,13 @@ function playMagicAttack() {
   }
   requestAnimationFrame(animateMagicAttack);
 }
+
 window.onload = function () {
   playSound();
+
 };
 function playSound() {
-  var myAudio = new Audio("./snd/ice-dragon.mp3");
+  var myAudio = new Audio("snd/ice-dragon.mp3");
   if (typeof myAudio.loop === 'boolean') {
     myAudio.loop = true;
   } else {
