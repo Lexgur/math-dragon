@@ -1,0 +1,123 @@
+$xl: 1400px;
+$fs: "Fontdiner Swanky", serif;
+$green: #1B998B;
+$red: #ED217C;
+$blue: #2D3047;
+$yellow: #FFFD82;
+$white: #FEFDFF;
+$black: black;
+$trans: all 0.3s ease-in-out;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("pics/mathB.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#magic-attack-container {
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+}
+
+#magic-attack {
+  width: 50px; 
+  position: absolute;
+  margin-top: 915px;
+  margin-left: 120px;
+}
+
+.dragon-app {
+  width: $xl;
+  font-family: $fs;
+  font-style: normal;
+  font-weight: 200;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    margin:70px 0px 0px 500px;
+  }
+
+  .title {
+    text-align: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: $red;
+    font-size: 40px;
+  }
+  .question {
+    color: $white;
+    font-size: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    margin-left: 500px;
+    margin-top: 30px;
+  }
+
+  .answer {
+    height: 80px;
+    color: $white;
+    font-family: $fs;
+    font-weight: 300;
+    font-size: 72px;
+    max-width: 110px;
+    background: linear-gradient(to left top, rgba(105,83,119,255), rgba(129,98,129,255))
+  }
+
+  .btn-sbmt {
+    opacity: 1;
+    background: linear-gradient(to left top, rgba(105,83,119,255), rgba(129,98,129,255));
+    scale: 0.5;
+    margin-top: -40px;
+    margin-left: -50px;
+    .heart{
+      scale: 1;
+      
+    }
+  }
+
+  .player{
+    position: absolute;
+    margin-top: 1400px;
+    margin-left: -520px;
+    img{
+      height: 115px;
+      transform: scaleX(-1);
+    }
+  }
+
+  .dragon{
+    position: absolute;
+    margin-top: 700px;
+    margin-left: 700px;
+    .dragon-hp{
+      margin-bottom: -50px;
+    }
+    img{
+      height: 700px;
+    }
+  }
+  .magic-attack {
+    transform: rotate(-15deg);
+    transform: scaleX(-1);
+    position: absolute;
+  }
+  
+}
+
