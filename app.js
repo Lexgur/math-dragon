@@ -53,7 +53,7 @@ form.addEventListener('submit', function (event) {
     if (dragonHp <= 0) {
       dragonHpElement.style.color = 'red';
       dragonHp = 0;
-      alert('ŠAUNUOLĖ, DRAKONAS NUGALĖTAS!');
+      alert('ŠAUNUOLĖ(-IS), DRAKONAS NUGALĖTAS!');
     }
     dragonHpElement.innerText = dragonHp;
   } else {
@@ -98,10 +98,8 @@ function playMagicAttack() {
   requestAnimationFrame(animateMagicAttack);
 }
 
-window.onload = function () {
-  playSound();
+window.addEventListener("load", playSound);
 
-};
 function playSound() {
   var myAudio = new Audio("snd/ice-dragon.mp3");
   if (typeof myAudio.loop === 'boolean') {
