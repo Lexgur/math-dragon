@@ -10,7 +10,7 @@ const magicSound = document.getElementById('magic-sound');
 const dragonHpElement = document.getElementById('dragon-hp');
 
 function playSound() {
-    const myAudio = new Audio("./snd/ice-dragon.mp3");
+    const myAudio = new Audio("/snd/ice-dragon.mp3");
     if (typeof myAudio.loop === 'boolean') {
         myAudio.loop = true;
     } else {
