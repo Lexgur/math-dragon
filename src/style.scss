@@ -13,6 +13,7 @@ $trans: all 0.3s ease-in-out;
 }
 
 body {
+  max-height: $xl;
   background-image: url("pics/mathB.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -38,7 +39,8 @@ body {
 }
 
 .dragon-app {
-  width: $xl;
+  width: 100%;
+  margin-left: -400px;
   font-family: $fs;
   font-style: normal;
   font-weight: 200;

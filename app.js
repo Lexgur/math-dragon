@@ -17,6 +17,18 @@ var magicAttackContainer = document.getElementById('magic-attack-container');
 var magicAttack = document.getElementById('magic-attack');
 var magicSound = document.getElementById('magic-sound');
 var dragonHpElement = document.getElementById('dragon-hp');
+var hasPlayedSound = false;
+function playSound() {
+  if (!hasPlayedSound) {
+    var myAudio = new Audio("./snd/ice-dragon.mp3");
+    myAudio.loop = true;
+    myAudio.volume = 0.2;
+    myAudio.play()["catch"](function (error) {
+      console.error('Audio playback failed:', error);
+    });
+    hasPlayedSound = true;
+  }
+}
 function rand(min, max) {
   var minCeiled = Math.ceil(min);
   var maxFloored = Math.floor(max);
@@ -52,9 +64,9 @@ form.addEventListener('submit', function (event) {
     playMagicAttack();
     dragonHp -= 10;
     if (dragonHp <= 0) {
-      dragonHpElement.classList.add('dead');
-    dragonHp = 0;
-    alert('ŠAUNUOLĖ(-IS), DRAKONAS NUGALĖTAS!');
+      dragonHpElement.style.color = 'red';
+      dragonHp = 0;
+      alert('ŠAUNUOLĖ, DRAKONAS NUGALĖTAS!');
     }
     dragonHpElement.innerText = dragonHp;
   } else {
@@ -83,6 +95,7 @@ function playMagicAttack() {
   magicSound.play();
   magicAttack.style.position = 'absolute';
   magicAttack.style.left = '50px';
+  magicAttack.style.opacity = 1;
   var startTime = Date.now();
   var attackDistance = 1300;
   var speed = attackDistance / 2000;
@@ -97,20 +110,6 @@ function playMagicAttack() {
     }
   }
   requestAnimationFrame(animateMagicAttack);
-}
-
-let hasPlayedSound = false;
-
-function playSound() {
-    if (!hasPlayedSound) { // Check if the sound has already been played
-        var myAudio = new Audio("./snd/ice-dragon.mp3");
-        myAudio.loop = true;
-        myAudio.volume = 0.2;
-        myAudio.play().catch(function(error) {
-            console.error('Audio playback failed:', error);
-        });
-        hasPlayedSound = true; // Set the flag to true once the sound has played
-    }
 }
 
 /***/ }),
@@ -214,8 +213,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/public/app": 0,
-/******/ 			"public/style": 0
+/******/ 			"/app": 0,
+/******/ 			"style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -265,8 +264,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/app.js")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/style"], () => (__webpack_require__("./src/style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./src/app.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["style"], () => (__webpack_require__("./src/style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

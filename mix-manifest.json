@@ -1,13 +1,13 @@
 {
-    "/public/app.js": "/public/app.js",
-    "/public/style.css": "/public/style.css",
-    "/public/index.html": "/public/index.html",
-    "/public/pics/elfP.png": "/public/pics/elfP.png",
-    "/public/pics/mathB.jpg": "/public/pics/mathB.jpg",
-    "/public/pics/pixelDragon.png": "/public/pics/pixelDragon.png",
-    "/public/snd/KOBOLD - HDK 02 † The cave of the lost talisman - 11 The ice dragon.mp3": "/public/snd/KOBOLD - HDK 02 † The cave of the lost talisman - 11 The ice dragon.mp3",
-    "/public/snd/ice-dragon.mp3": "/public/snd/ice-dragon.mp3",
-    "/public/pics/btn-sbmt.svg": "/public/pics/btn-sbmt.svg",
-    "/public/pics/mm.svg": "/public/pics/mm.svg",
-    "/public/snd/magic-attack.mp3": "/public/snd/magic-attack.mp3"
+    "/app.js": "/app.js",
+    "/style.css": "/style.css",
+    "/index.html": "/index.html",
+    "/pics/btn-sbmt.svg": "/pics/btn-sbmt.svg",
+    "/pics/elfP.png": "/pics/elfP.png",
+    "/pics/mathB.jpg": "/pics/mathB.jpg",
+    "/pics/mm.svg": "/pics/mm.svg",
+    "/pics/pixelDragon.png": "/pics/pixelDragon.png",
+    "/snd/ice-dragon.mp3": "/snd/ice-dragon.mp3",
+    "/snd/KOBOLD - HDK 02 † The cave of the lost talisman - 11 The ice dragon.mp3": "/snd/KOBOLD - HDK 02 † The cave of the lost talisman - 11 The ice dragon.mp3",
+    "/snd/magic-attack.mp3": "/snd/magic-attack.mp3"
 }

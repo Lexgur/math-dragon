@@ -3,8 +3,8 @@
 }
 
 body {
+  max-height: 1400px;
   background-image: url("pics/mathB.jpg");
-  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -29,7 +29,8 @@ body {
 }
 
 .dragon-app {
-  width: 1400px;
+  width: 100%;
+  margin-left: -400px;
   font-family: "Fontdiner Swanky", serif;
   font-style: normal;
   font-weight: 200;
@@ -103,11 +104,4 @@ body {
   transform: rotate(-15deg);
   transform: scaleX(-1);
   position: absolute;
-}
-.dragon-app .dragon .dragon-hp {
-  color: #00FF00; 
-  transition: color 0.3s ease;
-}
-.dragon-app .dragon .dragon-hp.dead {
-  color: red; /* Red when HP is 0 */
 }
