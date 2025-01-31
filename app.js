@@ -101,17 +101,18 @@ function playMagicAttack() {
 window.addEventListener("load", playSound);
 
 function playSound() {
-  var myAudio = new Audio("snd/ice-dragon.mp3");
+  var myAudio = document.getElementById("background-sound");
+  myAudio.src = "snd/ice-dragon.mp3"; 
   if (typeof myAudio.loop === 'boolean') {
-    myAudio.loop = true;
+    myAudio.loop = true; 
   } else {
     myAudio.addEventListener('ended', function () {
       this.currentTime = 0;
       this.play();
     }, false);
   }
-  myAudio.volume = 0.2;
-  myAudio.play();
+  myAudio.volume = 0.2; 
+  myAudio.play(); 
 }
 
 /***/ }),
