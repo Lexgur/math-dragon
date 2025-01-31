@@ -51,9 +51,9 @@ form.addEventListener('submit', function (event) {
     playMagicAttack();
     dragonHp -= 10;
     if (dragonHp <= 0) {
-      dragonHpElement.style.color = 'red';
-      dragonHp = 0;
-      alert('ŠAUNUOLĖ(-IS), DRAKONAS NUGALĖTAS!');
+      dragonHpElement.classList.add('dead');
+    dragonHp = 0;
+    alert('ŠAUNUOLĖ(-IS), DRAKONAS NUGALĖTAS!');
     }
     dragonHpElement.innerText = dragonHp;
   } else {

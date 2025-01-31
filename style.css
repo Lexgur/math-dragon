@@ -4,7 +4,7 @@
 
 body {
   background-image: url("pics/mathB.jpg");
-  width: 1400px;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -103,4 +103,11 @@ body {
   transform: rotate(-15deg);
   transform: scaleX(-1);
   position: absolute;
+}
+.dragon-app .dragon .dragon-hp {
+  color: #00FF00; 
+  transition: color 0.3s ease;
+}
+.dragon-app .dragon .dragon-hp.dead {
+  color: red; /* Red when HP is 0 */
 }
