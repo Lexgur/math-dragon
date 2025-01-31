@@ -102,7 +102,7 @@ window.addEventListener("load", playSound);
 
 function playSound() {
   var myAudio = document.getElementById("background-sound");
-  myAudio.src = "snd/ice-dragon.mp3"; 
+  myAudio.src = "./snd/ice-dragon.mp3"; 
   if (typeof myAudio.loop === 'boolean') {
     myAudio.loop = true; 
   } else {
