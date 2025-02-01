@@ -34,13 +34,14 @@ function playSound() {
   }
 }
 function startTimer() {
-  var secondsElapsed = 0;
+  var startTime = Date.now();
   timerInterval = setInterval(function () {
-    secondsElapsed++;
-    var minutes = Math.floor(secondsElapsed / 60);
-    var seconds = secondsElapsed % 60;
-    timer.innerText = "".concat(minutes, ":").concat(seconds.toString().padStart(2, '0'));
-  }, 1000);
+    var elapsedTime = Date.now() - startTime;
+    var minutes = Math.floor(elapsedTime / 60000);
+    var seconds = Math.floor(elapsedTime % 60000 / 1000);
+    var milliseconds = elapsedTime % 1000;
+    timer.innerText = "".concat(minutes, ":").concat(seconds.toString().padStart(2, '0'), ".").concat(milliseconds.toString().padStart(3, '0'));
+  }, 1);
 }
 function rand(min, max) {
   var minCeiled = Math.ceil(min);

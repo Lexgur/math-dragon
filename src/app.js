@@ -28,13 +28,16 @@ function playSound() {
 }
 
 function startTimer() {
-    let secondsElapsed = 0;
+    let startTime = Date.now();
+
     timerInterval = setInterval(() => {
-        secondsElapsed++;
-        const minutes = Math.floor(secondsElapsed / 60);
-        const seconds = secondsElapsed % 60;
-        timer.innerText = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-    }, 1000);
+        const elapsedTime = Date.now() - startTime;
+        const minutes = Math.floor(elapsedTime / 60000);
+        const seconds = Math.floor((elapsedTime % 60000) / 1000);
+        const milliseconds = elapsedTime % 1000;
+
+        timer.innerText = `${minutes}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
+    }, 1);
 }
 
 function rand(min, max) {

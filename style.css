@@ -6,8 +6,8 @@
 
 #magic-attack-container {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -10rem;
+  left: 8rem;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -37,11 +37,10 @@ body {
 .screen .wrapper {
   max-width: 1400px;
   width: 100%;
-  max-height: 1000px;
 }
 .screen .wrapper .dragon-app {
   width: 100%;
-  margin-left: -400px;
+  margin-left: -27%;
   font-family: "Fontdiner Swanky", serif;
   font-style: normal;
   font-weight: 200;
@@ -59,39 +58,39 @@ body {
   justify-content: space-between;
   gap: 15px;
   color: #ED217C;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 .screen .wrapper .dragon-app .title .timer {
   color: #FEFDFF;
   position: absolute;
-  margin-top: -170px;
+  margin-top: -10rem;
 }
 .screen .wrapper .dragon-app .question {
   color: #FEFDFF;
-  font-size: 80px;
+  font-size: 5rem;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  gap: 50px;
+  gap: 3rem;
   align-items: center;
-  margin-left: 500px;
-  margin-top: 30px;
+  margin-left: 40%;
+  margin-top: 1%;
 }
 .screen .wrapper .dragon-app .answer {
-  height: 80px;
+  height: 5rem;
   color: #FEFDFF;
   font-family: "Fontdiner Swanky", serif;
   font-weight: 300;
-  font-size: 72px;
-  max-width: 110px;
+  font-size: 4rem;
+  max-width: 6rem;
   background: linear-gradient(to left top, rgb(105, 83, 119), rgb(129, 98, 129));
 }
 .screen .wrapper .dragon-app .btn-sbmt {
   opacity: 1;
   background: linear-gradient(to left top, rgb(105, 83, 119), rgb(129, 98, 129));
   scale: 0.5;
-  margin-top: -40px;
-  margin-left: -50px;
+  margin-top: -1rem;
+  margin-left: -2rem;
 }
 .screen .wrapper .dragon-app .btn-sbmt .heart {
   scale: 1;
@@ -112,23 +111,54 @@ body {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  font-size: 35px;
-  margin-top: -100px;
-  margin-left: -970px;
+  font-size: 2rem;
+  margin-top: -5rem;
+  margin-left: -65rem;
 }
 .screen .wrapper .dragon {
   position: absolute;
-  margin-top: 820px;
-  margin-left: 700px;
+  margin-top: 50rem;
+  margin-left: 40rem;
 }
 .screen .wrapper .dragon .dragon-hp {
   margin-bottom: -50px;
 }
 .screen .wrapper .dragon img {
-  height: 700px;
+  height: 40rem;
 }
 .screen .wrapper .magic-attack {
   transform: rotate(-15deg);
   transform: scaleX(-1);
   position: absolute;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .question {
+    font-size: 1.2rem;
+    flex-direction: column;
+  }
+  .answer {
+    font-size: 1rem;
+    height: 2rem;
+  }
+  .dragon-app h1 {
+    font-size: 1.5rem;
+  }
+  .player img,
+  .dragon img {
+    width: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .dragon-app h1 {
+    font-size: 1.2rem;
+  }
+  .question {
+    font-size: 1rem;
+  }
+  .player img,
+  .dragon img {
+    width: 100px;
+  }
 }
