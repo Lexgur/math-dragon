@@ -17,3 +17,7 @@ Clone the repository to your local machine:
 ```bash
 git clone <your-repository-url>
 cd <your-project-directory>
+```
+### 2. Just play the deployment 
+
+https://lexgur.github.io/math-dragon/
